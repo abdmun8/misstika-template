@@ -1,6 +1,6 @@
 # @misstika/template
 
-A CLI tool for Office 365 authentication and project template generation.
+A CLI template project generation tool for MST Developer.
 
 ## Features
 
@@ -41,26 +41,6 @@ Display help information:
 npx @misstika/template help
 ```
 
-## Configuration
-
-The tool requires the following environment variables:
-
-### Required
-- `MST_CLIENT_ID`: Office 365 application client ID
-- `MST_TENANT_ID`: Office 365 tenant ID
-
-### Optional
-- `MST_API_URL`: API endpoint for template downloads (default: https://labs.mst.co.id/templates/api/templates)
-
-### Quick Setup
-```bash
-export MST_CLIENT_ID="your-client-id"
-export MST_TENANT_ID="your-tenant-id"
-export MST_API_URL="https://your-api.com/api/templates"  # optional
-```
-
-For detailed setup instructions, see [CONFIGURATION.md](CONFIGURATION.md).
-
 ## Token Storage
 
 Authentication tokens are stored securely in:
@@ -68,27 +48,6 @@ Authentication tokens are stored securely in:
 - **Windows**: `C:\Users\user\.misstika-template\tokens.json`
 
 Tokens are automatically refreshed when expired.
-
-
-## Development
-
-### Prerequisites
-- Node.js 16+
-- npm or yarn
-
-### Setup
-```bash
-git clone <repository>
-cd mst-template
-npm install
-npm run build
-```
-
-### Scripts
-- `npm run build`: Compile TypeScript to JavaScript
-- `npm run dev`: Run in development mode
-- `npm start`: Run compiled version
-- `npm run test:all`: Run all tests
 
 ## Security
 
