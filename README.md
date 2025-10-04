@@ -1,6 +1,6 @@
 # @misstika/template
 
-A CLI template project generation tool for MST Developer.
+A CLI project generation tool for MST Developer.
 
 ## Features
 
