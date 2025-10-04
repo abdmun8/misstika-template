@@ -1,4 +1,4 @@
-# @mst/template
+# @misstika/template
 
 A CLI tool for Office 365 authentication and project template generation.
 
@@ -12,7 +12,7 @@ A CLI tool for Office 365 authentication and project template generation.
 ## Installation
 
 ```bash
-npx @mst/template <command>
+npx @misstika/template <command>
 ```
 
 ## Usage
@@ -20,32 +20,25 @@ npx @mst/template <command>
 ### Login
 Authenticate with Office 365:
 ```bash
-npx @mst/template login
+npx @misstika/template login
 ```
 
 ### Generate Template
 Download and extract a project template:
 ```bash
-npx @mst/template generate <template-name>
+npx @misstika/template generate <template-name>
 ```
 
 ### Logout
 Remove stored authentication tokens:
 ```bash
-npx @mst/template logout
-```
-
-### Server
-Start the template API server:
-```bash
-npx @mst/template server
-npx @mst/template server --port 3001
+npx @misstika/template logout
 ```
 
 ### Help
 Display help information:
 ```bash
-npx @mst/template help
+npx @misstika/template help
 ```
 
 ## Configuration
@@ -57,7 +50,7 @@ The tool requires the following environment variables:
 - `MST_TENANT_ID`: Office 365 tenant ID
 
 ### Optional
-- `MST_API_URL`: API endpoint for template downloads (default: http://localhost:3001/api/templates)
+- `MST_API_URL`: API endpoint for template downloads (default: https://labs.mst.co.id/templates/api/templates)
 
 ### Quick Setup
 ```bash
@@ -71,33 +64,11 @@ For detailed setup instructions, see [CONFIGURATION.md](CONFIGURATION.md).
 ## Token Storage
 
 Authentication tokens are stored securely in:
-- **Linux/macOS**: `~/.mst-template/tokens.json`
-- **Windows**: `C:\Users\user\.mst-template\tokens.json`
+- **Linux/macOS**: `~/.misstika-template/tokens.json`
+- **Windows**: `C:\Users\user\.misstika-template\tokens.json`
 
 Tokens are automatically refreshed when expired.
 
-## API Server
-
-The package includes an Express.js API server for template management:
-
-### Endpoints
-- `GET /health` - Health check
-- `GET /callback` - OAuth callback (no authentication required)
-- `GET /api/templates` - List available templates
-- `GET /api/templates/:name` - Download template (requires Bearer token)
-- `POST /api/templates/:name` - Upload template (requires Bearer token)
-
-### Authentication
-All API endpoints (except health check and callback) require a valid Bearer token from Office 365 authentication.
-
-### Example Usage
-```bash
-# Start the server
-npx @mst/template server
-
-# Test with curl
-curl -H "Authorization: Bearer YOUR_TOKEN" http://localhost:3001/api/templates
-```
 
 ## Development
 
@@ -117,9 +88,7 @@ npm run build
 - `npm run build`: Compile TypeScript to JavaScript
 - `npm run dev`: Run in development mode
 - `npm start`: Run compiled version
-- `npm run server`: Start API server
-- `npm run server:dev`: Start API server in development mode
-- `npm run test:all`: Run all tests including API tests
+- `npm run test:all`: Run all tests
 
 ## Security
 
